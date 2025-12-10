@@ -15,8 +15,5 @@ COPY odoo.conf /etc/odoo/odoo.conf
 # Copiar módulos adicionales si los tienes en ./addons
 COPY ./addons /mnt/extra-addons
 
-# Exponer el puerto de Odoo
 EXPOSE 8069
-
-# Comando de inicio
 CMD ["odoo", "-c", "/etc/odoo/odoo.conf"]
