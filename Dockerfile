@@ -10,4 +10,5 @@ CMD odoo \
     --db_port=5432 \
     --db_user=$DB_USER \
     --db_password=$DB_PASSWORD \
-    -c /etc/odoo/odoo.conf
+    -c /etc/odoo/odoo.conf \
+    -i base
