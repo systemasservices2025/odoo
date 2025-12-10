@@ -1,13 +1,12 @@
-# Usa la imagen oficial de Odoo (ajusta la versión según tu branch)
 FROM odoo:19.0
 
-# Copiar configuración personalizada (solo rutas y opciones no sensibles)
+# Copiar configuración personalizada
 COPY odoo.conf /etc/odoo/odoo.conf
 COPY ./addons /mnt/extra-addons
 
-# Exponer el puerto de Odoo
 EXPOSE 8069
 
+# Comando de inicio (sin --db_name)
 CMD odoo \
     --db_host=$DB_HOST \
     --db_port=5432 \
