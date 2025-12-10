@@ -1,4 +1,4 @@
-# Imagen base oficial de Odoo (puedes ajustar la versión)
+# Usa la imagen oficial de Odoo (ajusta la versión según tu branch)
 FROM odoo:19.0
 
 # Variables de entorno (Render las inyecta en runtime)
@@ -14,10 +14,6 @@ COPY odoo.conf /etc/odoo/odoo.conf
 
 # Copiar módulos adicionales si los tienes en ./addons
 COPY ./addons /mnt/extra-addons
-
-# Instalar dependencias adicionales si las necesitas
-COPY requirements.txt /requirements.txt
-RUN pip install --no-cache-dir -r /requirements.txt
 
 # Exponer el puerto de Odoo
 EXPOSE 8069
